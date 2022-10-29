@@ -1,7 +1,26 @@
 doctype html
 html
 head
+    script(src="/bootstrap/js/bootstrap.js")
+    link(href="/bootstrap/css/bootstrap.css" rel="stylesheet")
+    link(href="/bootstrap/css/bootstrap-grid.css" rel="stylesheet")
+    link(href="/bootstrap/css/bootstrap-grid.rtl.css" rel="stylesheet")
+    link(href="/bootstrap/css/bootstrap-reboot.css" rel="stylesheet")
+    link(href="/bootstrap/css/bootstrap-reboot.rtl.css" rel="stylesheet")
+    link(href="/bootstrap/css/bootstrap.rtl.css" rel="stylesheet")
+    link(href="/bootstrap/css/bootstrap-utilities.css" rel="stylesheet")
+    link(href="/bootstrap/css/bootstrap-utilities.rtl.css" rel="stylesheet")
+
+head/
 title=title
 body
-p #{data}
-p test
+  div(style="position:relative; top:0px; width:100vw; height:35vh; background:red")
+  div(class="container-fluid")
+    div(class="row")
+      div(class="col")
+        p left
+      div(class="col-9")
+        ul
+          p #{services}
+      div(class="col")  
+        p right
