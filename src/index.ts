@@ -16,19 +16,19 @@ type Container_detail = {
     [key:string]: any
 }
 
-// app.get('/', async (req:express.Request, res:express.Response)=>{
-//     let services: string[] = []
-//     let containers = await docker.container.list()
-//     containers.forEach(container => {
-//         let c = <Container_detail> container
-//         let service_name: string = c.data.Labels.service_name
-//         services.push(service_name)
-//     })
+app.get('/', async (req:express.Request, res:express.Response)=>{
+    let services: string[] = []
+    let containers = await docker.container.list()
+    containers.forEach(container => {
+        let c = <Container_detail> container
+        let service_name: string = c.data.Labels.service_name
+        services.push(service_name)
+    })
 
-//     console.log(services)
-//     res.render("reg.jade", {"services": services});
+    console.log(services)
+    res.render("reg.jade", {"services": services});
 
-// });
+});
 
 app.listen(port, ()=>{
     console.log("")

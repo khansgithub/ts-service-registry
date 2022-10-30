@@ -1,11 +1,11 @@
 version: "3"
 services:
   node:
-    image: "node:8"
+    image: "node:latest"
     working_dir: /home/node/app
     volumes:
       - ./:/home/node/app
       - /var/run/docker.sock:/var/run/docker.sock 
-    expose:
-      - "3000"
+    ports:
+      - "3000:3000"
     command: "npm start"
