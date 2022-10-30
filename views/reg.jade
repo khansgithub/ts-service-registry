@@ -20,7 +20,9 @@ body
       div(class="col")
         p left
       div(class="col-9")
-        ul
-          p #{services}
+        h1 Services
+        ul(clas="list-group")
+          each service in services
+            li(class="list-group-item") #{service}
       div(class="col")  
         p right

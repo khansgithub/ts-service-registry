@@ -16,42 +16,19 @@ type Container_detail = {
     [key:string]: any
 }
 
-// app.get('/', (req:express.Request, res:express.Response)=>{
-//     // res.render("")
+// app.get('/', async (req:express.Request, res:express.Response)=>{
 //     let services: string[] = []
-//     docker.container.list()
-//         .then((containers) => {
-//             containers.forEach(container => {
-//                 let c = <Container_detail>container
-//                 // console.log(c.data.Labels)
-//                 services += c.data.Labels
-//             })
-//             // console.log(Object.prototype.toString.call(x))
-//             // console.log(Object.keys(x))
-//             // let x_keys = Object.keys(x);
-//             // console.log(x.Names)
-            
-//         })
+//     let containers = await docker.container.list()
+//     containers.forEach(container => {
+//         let c = <Container_detail> container
+//         let service_name: string = c.data.Labels.service_name
+//         services.push(service_name)
+//     })
+
 //     console.log(services)
 //     res.render("reg.jade", {"services": services});
 
 // });
-
-app.get('/', async (req:express.Request, res:express.Response)=>{
-    // res.render("")
-    let services: string[] = []
-    let containers = await docker.container.list()
-    containers.forEach(container => {
-        let c = <Container_detail>container
-        // console.log(c.data.Labels)
-        console.log(c.data.Labels)
-        services += c.data.Labels
-    })
-
-    console.log(services)
-    res.render("reg.jade", {"services": services});
-
-});
 
 app.listen(port, ()=>{
     console.log("")
