@@ -10,19 +10,30 @@ head
     link(href="/bootstrap/css/bootstrap.rtl.css" rel="stylesheet")
     link(href="/bootstrap/css/bootstrap-utilities.css" rel="stylesheet")
     link(href="/bootstrap/css/bootstrap-utilities.rtl.css" rel="stylesheet")
+    link(href="/stylesheet.css" rel="stylesheet")
 
 head/
 title=title
 body
-  div(style="position:relative; top:0px; width:100vw; height:35vh; background:red")
-  div(class="container-fluid")
-    div(class="row")
-      div(class="col")
-        p left
-      div(class="col-9")
-        h1 Services
-        ul(clas="list-group")
-          each service in services
-            li(class="list-group-item") #{service}
-      div(class="col")  
-        p right
+  div(style="position:relative; top:0px; width:100vw; height:35vh; background:none")
+  .container-fluid
+    .row
+      .col
+      .col-11
+        #services-block
+          //- h1 Services
+          table.table
+            thead 
+              tr
+                th(scope="col") Service
+                th(scope="col") URL
+              each service in services
+                tr
+                  td #{service.service_name}
+                  td #{service.url}
+        //- ul.list-group
+        //-   li.list-group-item Service name 
+        //-   li.list-group-item URL
+        //-   each service in services
+        //-     li.list-group-item #{service}
+      .col 

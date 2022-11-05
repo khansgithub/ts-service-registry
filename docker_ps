@@ -1,0 +1,4 @@
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS     NAMES
+edd61f163c00   bash      "docker-entrypoint.s…"   About a minute ago   Up About a minute             distracted_mirzakhani
+c587afea0fdc   bash      "docker-entrypoint.s…"   About a minute ago   Up About a minute             priceless_chatelet
+295066d9a5e5   bash      "docker-entrypoint.s…"   About a minute ago   Up About a minute             tender_ride
